@@ -8,8 +8,8 @@ using RocksmithToolkitLib.DLCPackage;
 using RocksmithToolkitLib.Sng;
 using RocksmithToolkitLib.Ogg;
 using RocksmithToolkitLib;
-using System.Reflection;
 using RocksmithToolkitLib.XML;
+using RocksmithToolkitLib.Extensions;
 
 namespace packer
 {
@@ -36,7 +36,8 @@ namespace packer
         {
             return new Arguments
             {
-                DecodeOGG = true
+                DecodeOGG = true,
+                Platform = new Platform(GamePlatform.Pc, GameVersion.RS2014)
             };
         }
 
@@ -395,40 +396,95 @@ namespace packer
 
         private static void CreateTemplate(string unpackedDir, Platform platform)
         {
-            // create template xml files
-            using (var packageCreator = new RocksmithToolkitGUI.DLCPackageCreator.DLCPackageCreator())
+            DLCPackageData info;
+            if (platform.version == GameVersion.RS2014)
+                info = DLCPackageData.LoadFromFolder(unpackedDir, platform, platform, true, true);
+            else
+                info = DLCPackageData.RS1LoadFromFolder(unpackedDir, platform, false);
+
+            info.GameVersion = platform.version;
+            info.Pc = platform.platform == GamePlatform.Pc;
+            info.Mac = platform.platform == GamePlatform.Mac;
+            info.XBox360 = platform.platform == GamePlatform.XBox360;
+            info.PS3 = platform.platform == GamePlatform.PS3;
+
+            var templatePath = BuildTemplatePath(unpackedDir, info, platform.version);
+            WriteTemplateFile(info, templatePath);
+            Console.WriteLine("Template created: " + templatePath);
+        }
+
+        private static string BuildTemplatePath(string unpackedDir, DLCPackageData info, GameVersion version)
+        {
+            var artist = info.SongInfo != null ? (info.SongInfo.ArtistSort ?? info.SongInfo.Artist) : null;
+            var title = info.SongInfo != null ? (info.SongInfo.SongDisplayNameSort ?? info.SongInfo.SongDisplayName) : null;
+            var fileName = String.Empty;
+            try
             {
-                DLCPackageData info = null;
-                if (platform.version == GameVersion.RS2014)
-                    info = DLCPackageData.LoadFromFolder(unpackedDir, platform, platform, true, true);
-                else
-                    info = DLCPackageData.RS1LoadFromFolder(unpackedDir, platform, false);
+                fileName = StringExtensions.GetValidShortFileName(artist, title, version.ToString(), false);
+            }
+            catch
+            {
+                fileName = (info.Name ?? "template").GetValidFileName() + "_" + version;
+            }
 
-                info.GameVersion = platform.version;
+            return Path.Combine(unpackedDir, fileName + ".dlc.xml");
+        }
 
-                switch (platform.platform)
-                {
-                    case GamePlatform.Pc:
-                        info.Pc = true;
-                        break;
-                    case GamePlatform.Mac:
-                        info.Mac = true;
-                        break;
-                    case GamePlatform.XBox360:
-                        info.XBox360 = true;
-                        break;
-                    case GamePlatform.PS3:
-                        info.PS3 = true;
-                        break;
-                }
+        private static void WriteTemplateFile(DLCPackageData packageData, string templatePath)
+        {
+            var basePath = Path.GetDirectoryName(templatePath);
+            if (String.IsNullOrEmpty(basePath))
+                basePath = Environment.CurrentDirectory;
 
-                packageCreator.FillPackageCreatorForm(info, unpackedDir);
-                // fix descrepancies
-                packageCreator.CurrentGameVersion = platform.version;
-                //packageCreator.SelectComboAppId(info.AppId);
-                packageCreator.AppId = info.AppId;
-                // save template xml file
-                packageCreator.SaveTemplateFile(unpackedDir, false);
+            MakePathsRelative(packageData, basePath);
+
+            using (var stm = XmlWriter.Create(templatePath, new XmlWriterSettings { CheckCharacters = true, Indent = true }))
+            {
+                new DataContractSerializer(typeof(DLCPackageData)).WriteObject(stm, packageData);
+            }
+
+            MakePathsAbsolute(packageData, basePath);
+        }
+
+        private static void MakePathsRelative(DLCPackageData packageData, string basePath)
+        {
+            if (!String.IsNullOrEmpty(packageData.OggPath))
+                packageData.OggPath = packageData.OggPath.RelativeTo(basePath);
+            if (!String.IsNullOrEmpty(packageData.OggPreviewPath))
+                packageData.OggPreviewPath = packageData.OggPreviewPath.RelativeTo(basePath);
+            if (!string.IsNullOrEmpty(packageData.AlbumArtPath))
+                packageData.AlbumArtPath = packageData.AlbumArtPath.RelativeTo(basePath);
+
+            foreach (var arr in packageData.Arrangements)
+            {
+                if (arr.SongXml != null && !String.IsNullOrEmpty(arr.SongXml.File))
+                    arr.SongXml.File = arr.SongXml.File.RelativeTo(basePath);
+                if (arr.SongFile != null)
+                    arr.SongFile.File = "";
+                if (!String.IsNullOrEmpty(arr.LyricsArtPath))
+                    arr.LyricsArtPath = arr.LyricsArtPath.RelativeTo(basePath);
+                if (!String.IsNullOrEmpty(arr.GlyphsXmlPath))
+                    arr.GlyphsXmlPath = arr.GlyphsXmlPath.RelativeTo(basePath);
+            }
+        }
+
+        private static void MakePathsAbsolute(DLCPackageData packageData, string basePath)
+        {
+            if (!String.IsNullOrEmpty(packageData.OggPath))
+                packageData.OggPath = packageData.OggPath.AbsoluteTo(basePath);
+            if (!String.IsNullOrEmpty(packageData.OggPreviewPath))
+                packageData.OggPreviewPath = packageData.OggPreviewPath.AbsoluteTo(basePath);
+            if (!string.IsNullOrEmpty(packageData.AlbumArtPath))
+                packageData.AlbumArtPath = packageData.AlbumArtPath.AbsoluteTo(basePath);
+
+            foreach (var arr in packageData.Arrangements)
+            {
+                if (arr.SongXml != null && !String.IsNullOrEmpty(arr.SongXml.File))
+                    arr.SongXml.File = arr.SongXml.File.AbsoluteTo(basePath);
+                if (!String.IsNullOrEmpty(arr.LyricsArtPath))
+                    arr.LyricsArtPath = arr.LyricsArtPath.AbsoluteTo(basePath);
+                if (!String.IsNullOrEmpty(arr.GlyphsXmlPath))
+                    arr.GlyphsXmlPath = arr.GlyphsXmlPath.AbsoluteTo(basePath);
             }
         }
 

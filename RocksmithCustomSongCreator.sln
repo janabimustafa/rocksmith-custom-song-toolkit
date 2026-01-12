@@ -39,7 +39,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sng2014", "RocksmithToolkit
 		{1A3DEAD6-14F3-43C3-B15C-A866D48FEF61} = {1A3DEAD6-14F3-43C3-B15C-A866D48FEF61}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "packagecreator", "RocksmithToolkitCLI\PackageCreator\packagecreator.csproj", "{ED268869-387A-477E-A652-C6E47BE2AC02}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "packagecreator", "RocksmithToolkitCLI\packagecreator\packagecreator.csproj", "{ED268869-387A-477E-A652-C6E47BE2AC02}"
 	ProjectSection(ProjectDependencies) = postProject
 		{1A3DEAD6-14F3-43C3-B15C-A866D48FEF61} = {1A3DEAD6-14F3-43C3-B15C-A866D48FEF61}
 	EndProjectSection

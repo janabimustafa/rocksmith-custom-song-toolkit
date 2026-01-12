@@ -341,6 +341,7 @@ namespace RocksmithToolkitUpdater
             if (localToolkitDir != newLocalToolkitDir)
             {
                 // find open localToolkitDir and attempt to close it so it can be deleted
+#if !UNIX
                 var shellWindows = new SHDocVw.ShellWindows();
                 foreach (SHDocVw.InternetExplorer shellWindow in shellWindows)
                 {
@@ -361,6 +362,7 @@ namespace RocksmithToolkitUpdater
                         break;
                     }
                 }
+#endif
 
                 // attempt to delete the closed directory
                 DeleteDirectory(localToolkitDir);

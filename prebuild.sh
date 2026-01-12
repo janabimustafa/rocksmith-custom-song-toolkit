@@ -25,7 +25,13 @@ then
 fi
 echo Reading ToolkitVersion.cs_dist...
 origstr=00000000
-cp -f "${toolkitver}_dist" "$toolkitver"
+if [ -e "${toolkitver}_dist" ]; then
+        cp -f "${toolkitver}_dist" "$toolkitver"
+elif [ -e "${toolkitver}e" ]; then
+        cp -f "${toolkitver}e" "$toolkitver"
+else
+        echo "Missing ${toolkitver}_dist (and fallback) - leaving existing file in place"
+fi
 echo Writing ToolkitVersion.cs...
 sed -ie "s/$origstr/$rev/g" "$toolkitver"
 echo Done

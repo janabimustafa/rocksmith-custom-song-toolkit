@@ -58,6 +58,9 @@
   <PropertyGroup>
     <ProjectConfigFileName>App.config</ProjectConfigFileName>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(OS)' == 'Unix' ">
+    <DefineConstants>$(DefineConstants);UNIX</DefineConstants>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -112,7 +115,7 @@
   <ItemGroup>
     <Content Include="autoupdater.ico" />
   </ItemGroup>
-  <ItemGroup>
+  <ItemGroup Condition=" '$(OS)' != 'Unix' ">
     <COMReference Include="SHDocVw">
       <Guid>{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}</Guid>
       <VersionMajor>1</VersionMajor>

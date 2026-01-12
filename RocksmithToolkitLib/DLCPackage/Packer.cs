@@ -188,7 +188,8 @@ namespace RocksmithToolkitLib.DLCPackage
                     foreach (var sngFile in sngFiles)
                     {
                         // prevent ContextSwitchDeadlock exceptions in long processes
-                        Application.DoEvents();
+                        if (!GlobalExtension.IsHeadless)
+                            Application.DoEvents();
 
                         var xmlEofFile = Path.Combine(Path.GetDirectoryName(sngFile), String.Format("{0}.xml", Path.GetFileNameWithoutExtension(sngFile)));
                         xmlEofFile = xmlEofFile.Replace(String.Format("bin{0}{1}", Path.DirectorySeparatorChar, srcPlatform.GetPathName()[1].ToLower()), "arr");
@@ -272,7 +273,7 @@ namespace RocksmithToolkitLib.DLCPackage
                             File.Delete(xmlSngFile);
 
                         progress += step;
-                        GlobalExtension.UpdateProgress.Value = (int)progress;
+                        GlobalExtension.SetProgressValue((int)progress);
                     }
 
                     //GlobalExtension.HideProgress();
@@ -684,7 +685,10 @@ namespace RocksmithToolkitLib.DLCPackage
         {
             // start fresh on initial call and internalize destPath for recursion
             if (isInitialCall)
+            {
                 destPath = GetUnpackedDir(srcPath, destPath, platform);
+                Directory.CreateDirectory(destPath);
+            }
 
             var psarc = new PSARC.PSARC();
             psarc.Read(inputStream, true);
@@ -698,7 +702,8 @@ namespace RocksmithToolkitLib.DLCPackage
                 foreach (var entry in psarc.TOC)
                 {
                     // prevent ContextSwitchDeadlock exceptions in long processes
-                    Application.DoEvents();
+                    if (!GlobalExtension.IsHeadless)
+                        Application.DoEvents();
 
                     // remove invalid characters from entry.Name so CDLC can be unpacked
                     var validEntryName = entry.Name.Replace("?", "~");
@@ -726,7 +731,7 @@ namespace RocksmithToolkitLib.DLCPackage
                     }
 
                     progress += step;
-                    GlobalExtension.UpdateProgress.Value = (int)progress;
+                    GlobalExtension.SetProgressValue((int)progress);
                 }
             }
             catch (Exception ex)

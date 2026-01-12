@@ -8,6 +8,17 @@ namespace RocksmithToolkitLib.Extensions
 {
     public static class ExternalApps
     {
+        private static bool IsUnixLike()
+        {
+            var platform = Environment.OSVersion.Platform;
+            return platform == PlatformID.Unix || platform == PlatformID.MacOSX;
+        }
+
+        private static string ChooseExe(string windowsName, string unixName)
+        {
+            return IsUnixLike() ? unixName : windowsName;
+        }
+
         // path fixed for unit testing compatiblity
         public static readonly string TOOLKIT_ROOT = AppDomain.CurrentDomain.SetupInformation.ApplicationBase;
         public static readonly string TOOLS_DIR = "tools";
@@ -17,8 +28,8 @@ namespace RocksmithToolkitLib.Extensions
         public static readonly string APP_OGGCUT = Path.Combine(TOOLS_DIR, "oggCut.exe");
         public static readonly string APP_OGGDEC = Path.Combine(TOOLS_DIR, "oggdec.exe");
         public static readonly string APP_OGGENC = Path.Combine(TOOLS_DIR, "oggenc.exe");
-        public static readonly string APP_WW2OGG = Path.Combine(TOOLS_DIR, "ww2ogg.exe");
-        public static readonly string APP_REVORB = Path.Combine(TOOLS_DIR, "revorb.exe");
+        public static readonly string APP_WW2OGG = Path.Combine(TOOLS_DIR, ChooseExe("ww2ogg.exe", "ww2ogg"));
+        public static readonly string APP_REVORB = Path.Combine(TOOLS_DIR, ChooseExe("revorb.exe", "revorb"));
         public static readonly string APP_CODEBOOKS = Path.Combine(TOOLS_DIR, "packed_codebooks.bin");
         public static readonly string APP_CODEBOOKS_603 = Path.Combine(TOOLS_DIR, "packed_codebooks_aoTuV_603.bin");
         public static readonly string APP_COREJAR = Path.Combine(TOOLS_DIR, "core.jar");

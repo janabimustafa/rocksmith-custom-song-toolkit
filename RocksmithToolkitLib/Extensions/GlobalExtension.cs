@@ -9,6 +9,39 @@ namespace RocksmithToolkitLib.Extensions
 {
     public static class GlobalExtension
     {
+        private static bool? _isHeadless;
+        public static bool IsHeadless
+        {
+            get
+            {
+                if (_isHeadless.HasValue)
+                    return _isHeadless.Value;
+
+                var headlessOverride = Environment.GetEnvironmentVariable("RS_TOOLKIT_HEADLESS");
+                if (!String.IsNullOrEmpty(headlessOverride) &&
+                    !headlessOverride.Equals("0", StringComparison.OrdinalIgnoreCase) &&
+                    !headlessOverride.Equals("false", StringComparison.OrdinalIgnoreCase))
+                {
+                    _isHeadless = true;
+                    return true;
+                }
+
+                var platform = Environment.OSVersion.Platform;
+                if (platform == PlatformID.Unix || platform == PlatformID.MacOSX)
+                {
+                    var display = Environment.GetEnvironmentVariable("DISPLAY");
+                    if (String.IsNullOrEmpty(display))
+                    {
+                        _isHeadless = true;
+                        return true;
+                    }
+                }
+
+                _isHeadless = false;
+                return false;
+            }
+        }
+
         private static Label _currentOperationLabel;
         public static Label CurrentOperationLabel
         {
@@ -48,12 +81,18 @@ namespace RocksmithToolkitLib.Extensions
 
         public static void HideProgress()
         {
+            if (IsHeadless)
+                return;
+
             UpdateProgress.Visible = false;
             CurrentOperationLabel.Visible = false;
         }
 
         public static void ShowProgress(string currentOperation = "...", int progressValue = 0)
         {
+            if (IsHeadless)
+                return;
+
             // getter/setter checks this so should not need here
             // if (progressValue > 100)
             //    progressValue = 100;
@@ -66,8 +105,29 @@ namespace RocksmithToolkitLib.Extensions
             CurrentOperationLabel.Refresh();
         }
 
+        public static void SetProgressValue(int progressValue)
+        {
+            if (IsHeadless)
+                return;
+
+            if (progressValue > 100)
+                progressValue = 100;
+            else if (progressValue < 0)
+                progressValue = 0;
+
+            UpdateProgress.Value = progressValue;
+            UpdateProgress.Refresh();
+        }
+
         public static void Dispose()
         {
+            if (IsHeadless)
+            {
+                _updateProgress = null;
+                _currentOperationLabel = null;
+                return;
+            }
+
             HideProgress();
             // do not be tempted to use dispose here!
             _updateProgress = null;

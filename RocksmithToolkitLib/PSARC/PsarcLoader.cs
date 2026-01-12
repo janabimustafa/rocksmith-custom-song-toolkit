@@ -75,10 +75,10 @@ namespace RocksmithToolkitLib.PSARC
                     entry.Data.Dispose();
 
                 progress += step;
-                GlobalExtension.UpdateProgress.Value = (int)progress;
+                GlobalExtension.SetProgressValue((int)progress);
             }
 
-            GlobalExtension.UpdateProgress.Value = 100;
+            GlobalExtension.SetProgressValue(100);
             return entryNames;
         }
 

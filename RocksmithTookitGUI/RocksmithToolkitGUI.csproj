@@ -133,13 +133,13 @@
     <Compile Include="DLCPackageCreator\DLCPackageCreator.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="DLCPackageCreator\DLCPackageCreator.designer.cs">
+    <Compile Include="DLCPackageCreator\DLCPackageCreator.Designer.cs">
       <DependentUpon>DLCPackageCreator.cs</DependentUpon>
     </Compile>
     <Compile Include="DLCPackageCreator\ToneControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="DLCPackageCreator\ToneControl.designer.cs">
+    <Compile Include="DLCPackageCreator\ToneControl.Designer.cs">
       <DependentUpon>ToneControl.cs</DependentUpon>
     </Compile>
     <Compile Include="DLCPackageCreator\VocalsForm.Designer.cs">
@@ -148,7 +148,7 @@
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.designer.cs">
+    <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
@@ -444,7 +444,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
+  <PropertyGroup Condition=" '$(OS)' != 'Unix' ">
     <PreBuildEvent>REM cleanup the TargetDir before starting the build
 del /S /Q "$(TargetDir)*.*
 
@@ -452,15 +452,23 @@ REM copy support files
 xcopy /E /S /Y "$(SolutionDir)ThirdPartyApps\*.*" "$(TargetDir)*.*"
 
 </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(OS)' == 'Unix' ">
+    <PreBuildEvent>rm -rf "$(TargetDir)"*
+mkdir -p "$(TargetDir)"
+cp -R "$(SolutionDir)ThirdPartyApps/." "$(TargetDir)"
+</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
     <!-- be sure to address all build types in the PostBuildEvent -->
     <PostBuildEvent Condition=" '$(OS)' != 'Unix' ">
       xcopy /S /Y "$(SolutionDir)Third-party Apps"
     </PostBuildEvent>
     <PostBuildEvent Condition=" '$(OS)' == 'Unix' ">
-      cp -Rf "$(SolutionDir)Third-party Apps" "$(TargetDir)"
+      cp -Rf "$(SolutionDir)ThirdPartyApps/." "$(TargetDir)"
     </PostBuildEvent>
   </PropertyGroup>
-  <PropertyGroup>
+  <PropertyGroup Condition=" '$(OS)' != 'Unix' ">
     <PostBuildEvent>REM copy ToolkitUpdater App.config to Release folder
 copy /Y "$(SolutionDir)RocksmithToolkitUpdater\$(OutDir)*.exe.config" "$(TargetDir)*.*"
 

@@ -283,7 +283,7 @@ namespace RocksmithToolkitLib.PSARC
 
                 entryDeflatedData.Add(entry, array3);
                 progress += step;
-                GlobalExtension.UpdateProgress.Value = (int)progress;
+                GlobalExtension.SetProgressValue((int)progress);
                 Console.WriteLine("Deflating Entries: " + ndx++);
             }
         }
@@ -550,7 +550,7 @@ namespace RocksmithToolkitLib.PSARC
                 _writer.WriteUInt40(entry.Offset);
 
                 progress += step;
-                GlobalExtension.UpdateProgress.Value = (int)progress;
+                GlobalExtension.SetProgressValue((int)progress);
                 Console.WriteLine("Writing tocData: " + entry.Id);
             }
 
@@ -628,7 +628,7 @@ namespace RocksmithToolkitLib.PSARC
                 //}
 
                 progress += step;
-                GlobalExtension.UpdateProgress.Value = (int)progress;
+                GlobalExtension.SetProgressValue((int)progress);
                 Console.WriteLine("Writing zData: " + entry.Id);
             }
 
@@ -668,7 +668,7 @@ namespace RocksmithToolkitLib.PSARC
                         encStream.Write(buffer, 0, bytesRead);
 
                         progress += step;
-                        GlobalExtension.UpdateProgress.Value = (int)progress;
+                        GlobalExtension.SetProgressValue((int)progress);
                         Console.WriteLine("Writing encryptedData: " + ndx++);
                     }
 
