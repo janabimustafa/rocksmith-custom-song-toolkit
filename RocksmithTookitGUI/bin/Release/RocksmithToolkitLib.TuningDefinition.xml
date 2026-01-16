@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfTuningDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TuningDefinition Version="RS2012" Name="Standard" UIName="E Standard" Custom="false">
+    <Tuning string0="0" string1="0" string2="0" string3="0" string4="0" string5="0" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2012" Name="DropD" UIName="Drop D" Custom="false">
+    <Tuning string0="-2" string1="0" string2="0" string3="0" string4="0" string5="0" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2012" Name="OpenG" UIName="Open G" Custom="false">
+    <Tuning string0="-2" string1="-2" string2="0" string3="0" string4="0" string5="-2" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2012" Name="EFlat" UIName="Eb" Custom="false">
+    <Tuning string0="-1" string1="-1" string2="-1" string3="-1" string4="-1" string5="-1" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="EStandard" UIName="E Standard" Custom="false">
+    <Tuning string0="0" string1="0" string2="0" string3="0" string4="0" string5="0" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="DropD" UIName="Drop D" Custom="false">
+    <Tuning string0="-2" string1="0" string2="0" string3="0" string4="0" string5="0" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="OpenD" UIName="Open D" Custom="false">
+    <Tuning string0="-2" string1="0" string2="0" string3="-1" string4="-2" string5="-2" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="OpenA" UIName="Open A" Custom="false">
+    <Tuning string0="0" string1="0" string2="2" string3="2" string4="2" string5="0" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="OpenG" UIName="Open G" Custom="false">
+    <Tuning string0="-2" string1="-2" string2="0" string3="0" string4="0" string5="-2" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="OpenE" UIName="Open E" Custom="false">
+    <Tuning string0="0" string1="2" string2="2" string3="1" string4="0" string5="0" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="EbStandard" UIName="Eb Standard" Custom="false">
+    <Tuning string0="-1" string1="-1" string2="-1" string3="-1" string4="-1" string5="-1" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="EbDropDb" UIName="Eb Drop Db" Custom="false">
+    <Tuning string0="-3" string1="-1" string2="-1" string3="-1" string4="-1" string5="-1" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="DStandard" UIName="D Standard" Custom="false">
+    <Tuning string0="-2" string1="-2" string2="-2" string3="-2" string4="-2" string5="-2" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="DDropC" UIName="D Drop C" Custom="false">
+    <Tuning string0="-4" string1="-2" string2="-2" string3="-2" string4="-2" string5="-2" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="C#Standard" UIName="C# Standard" Custom="false">
+    <Tuning string0="-3" string1="-3" string2="-3" string3="-3" string4="-3" string5="-3" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="CStandard" UIName="C Standard" Custom="false">
+    <Tuning string0="-4" string1="-4" string2="-4" string3="-4" string4="-4" string5="-4" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="FStandard" UIName="F Standard" Custom="true">
+    <Tuning string0="1" string1="1" string2="1" string3="1" string4="1" string5="1" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="BStandard" UIName="B Standard" Custom="true">
+    <Tuning string0="-5" string1="-5" string2="-5" string3="-5" string4="-5" string5="-5" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="BbStandard" UIName="Bb Standard" Custom="true">
+    <Tuning string0="-6" string1="-6" string2="-6" string3="-6" string4="-6" string5="-6" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="AStandard" UIName="A Standard" Custom="true">
+    <Tuning string0="-7" string1="-7" string2="-7" string3="-7" string4="-7" string5="-7" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="AbStandard" UIName="Ab Standard" Custom="true">
+    <Tuning string0="-7" string1="-7" string2="-7" string3="-7" string4="-7" string5="-7" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="C#DropB" UIName="C# Drop B" Custom="true">
+    <Tuning string0="-5" string1="-3" string2="-3" string3="-3" string4="-3" string5="-3" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="CdropA#" UIName="C Drop A#" Custom="true">
+    <Tuning string0="-6" string1="-4" string2="-4" string3="-4" string4="-4" string5="-4" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="BDropA" UIName="B Drop A" Custom="true">
+    <Tuning string0="-7" string1="-5" string2="-5" string3="-5" string4="-5" string5="-5" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="BbDropAb" UIName="Bb Drop Ab" Custom="true">
+    <Tuning string0="-8" string1="-6" string2="-6" string3="-6" string4="-6" string5="-6" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="ADropG" UIName="A Drop G" Custom="true">
+    <Tuning string0="-9" string1="-7" string2="-7" string3="-7" string4="-7" string5="-7" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="DoubleDropD" UIName="Double Drop D" Custom="true">
+    <Tuning string0="-2" string1="0" string2="0" string3="0" string4="0" string5="-2" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="DoubleDropDb" UIName="Double Drop Db" Custom="false">
+    <Tuning string0="-3" string1="-1" string2="-1" string3="-1" string4="-1" string5="-3" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="DoubleDropC" UIName="Double Drop C" Custom="true">
+    <Tuning string0="-4" string1="-2" string2="-2" string3="-2" string4="-2" string5="-4" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="DoubleDropB" UIName="Double Drop B" Custom="true">
+    <Tuning string0="-5" string1="-3" string2="-3" string3="-3" string4="-3" string5="-5" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="DoubledropA#" UIName="Double Drop A#" Custom="true">
+    <Tuning string0="-6" string1="-4" string2="-4" string3="-4" string4="-4" string5="-6" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="DADFCD" UIName="Open Dm7" Custom="true">
+    <Tuning string0="-2" string1="0" string2="0" string3="-2" string4="1" string5="-2" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="EGDGBD" UIName="Open Em9" Custom="true">
+    <Tuning string0="0" string1="-2" string2="0" string3="0" string4="0" string5="-2" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="CFCFAC" UIName="Open F" Custom="true">
+    <Tuning string0="-4" string1="-4" string2="-2" string3="-2" string4="-2" string5="-4" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="DADGAD" UIName="DADGAD" Custom="true">
+    <Tuning string0="-2" string1="0" string2="0" string3="0" string4="-2" string5="-2" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="CACGCE" UIName="CACGCE" Custom="true">
+    <Tuning string0="-4" string1="0" string2="-2" string3="0" string4="1" string5="0" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="DADADd" UIName="DADADd" Custom="true">
+    <Tuning string0="-2" string1="0" string2="0" string3="2" string4="3" string5="-2" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="CGCGGE" UIName="CGCGGE" Custom="true">
+    <Tuning string0="-4" string1="-2" string2="-2" string3="0" string4="-4" string5="0" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="EADGAe" UIName="EADGAe" Custom="true">
+    <Tuning string0="0" string1="0" string2="0" string3="0" string4="-2" string5="0" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="EADGcf" UIName="All Fourth" Custom="true">
+    <Tuning string0="0" string1="0" string2="0" string3="0" string4="1" string5="2" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="BstandardBass" UIName="B standard 6 Strings Bass" Custom="false">
+    <Tuning string0="-5" string1="-5" string2="-5" string3="-5" string4="-4" string5="-4" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="BbstandardBass" UIName="Bb standard 6 Strings Bass" Custom="false">
+    <Tuning string0="-6" string1="-6" string2="-6" string3="-6" string4="-5" string5="-5" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="AstandardBass" UIName="A standard 6 Strings Bass" Custom="false">
+    <Tuning string0="-7" string1="-7" string2="-7" string3="-7" string4="-6" string5="-6" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="AbstandardBass" UIName="Ab standard 6 Strings Bass" Custom="false">
+    <Tuning string0="-8" string1="-8" string2="-8" string3="-8" string4="-7" string5="-7" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="BdropABass" UIName="B Drop A 6 Strings Bass" Custom="false">
+    <Tuning string0="-7" string1="-5" string2="-5" string3="-5" string4="-4" string5="-4" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="BbdropAbBass" UIName="Bb Drop Ab 6 Strings Bass" Custom="false">
+    <Tuning string0="-8" string1="-6" string2="-6" string3="-6" string4="-5" string5="-5" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="AdropGBass" UIName="A Drop G 6 Strings Bass" Custom="false">
+    <Tuning string0="-9" string1="-7" string2="-7" string3="-7" string4="-6" string5="-6" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="GDAE" UIName="Viola @1760" Custom="true">
+    <Tuning string0="3" string1="5" string2="7" string3="9" string4="0" string5="0" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="CGDA" UIName="Cello @440" Custom="true">
+    <Tuning string0="8" string1="10" string2="0" string3="2" string4="0" string5="0" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="CGDA" UIName="Cello @880" Custom="true">
+    <Tuning string0="-4" string1="-2" string2="0" string3="2" string4="0" string5="0" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="GCEA" UIName="Ukulele @3520" Custom="true">
+    <Tuning string0="3" string1="-9" string2="-10" string3="-10" string4="0" string5="0" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="BStandardFixed" UIName="B Standard Fixed" Custom="true">
+    <Tuning string0="7" string1="7" string2="7" string3="7" string4="7" string5="7" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="DbDropBFixed" UIName="Db Drop B Fixed" Custom="true">
+    <Tuning string0="7" string1="9" string2="9" string3="9" string4="9" string5="9" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="BADGBEFixed" UIName="BADGBE Fixed" Custom="true">
+    <Tuning string0="7" string1="0" string2="0" string3="0" string4="0" string5="0" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="CDropBbFixed" UIName="C Drop Bb Fixed" Custom="true">
+    <Tuning string0="6" string1="8" string2="8" string3="8" string4="8" string5="8" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="ACGCBEFixed" UIName="ACGCBE Fixed" Custom="true">
+    <Tuning string0="5" string1="3" string2="5" string3="5" string4="0" string5="0" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="GGCFADFixed" UIName="GGCFAD Fixed" Custom="true">
+    <Tuning string0="3" string1="10" string2="10" string3="10" string4="10" string5="10" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="BDGCBEFixed" UIName="BDGCBE Fixed" Custom="true">
+    <Tuning string0="7" string1="5" string2="5" string3="5" string4="0" string5="0" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="FFBbEbGEFixed" UIName="FFBbEbGE Fixed" Custom="true">
+    <Tuning string0="1" string1="8" string2="8" string3="8" string4="8" string5="0" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="BbFBbEbGAbFixed" UIName="BbFBbEbGAb Fixed" Custom="true">
+    <Tuning string0="6" string1="8" string2="8" string3="8" string4="8" string5="4" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="BDropAFixed" UIName="B Drop A Fixed" Custom="true">
+    <Tuning string0="5" string1="7" string2="7" string3="7" string4="7" string5="7" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="BbFBbEbBEFixed" UIName="BbFBbEbBE Fixed" Custom="true">
+    <Tuning string0="6" string1="8" string2="8" string3="8" string4="0" string5="0" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="AGCFADFixed" UIName="AGCFAD Fixed" Custom="true">
+    <Tuning string0="5" string1="10" string2="10" string3="10" string4="10" string5="10" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="ADADGBFixed" UIName="ADADGB Fixed" Custom="true">
+    <Tuning string0="5" string1="5" string2="7" string3="7" string4="8" string5="7" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="BGbBGbBEbFixed" UIName="BGbBGbBEb Fixed" Custom="true">
+    <Tuning string0="7" string1="9" string2="9" string3="11" string4="0" string5="11" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="BEAEbBEFixed" UIName="BEAEbBE Fixed" Custom="true">
+    <Tuning string0="7" string1="7" string2="7" string3="8" string4="0" string5="0" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="BEADBEFixed" UIName="BEADBE Fixed" Custom="true">
+    <Tuning string0="7" string1="7" string2="7" string3="7" string4="0" string5="0" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="BbStandardFixed" UIName="Bb Standard Fixed" Custom="true">
+    <Tuning string0="6" string1="6" string2="6" string3="6" string4="6" string5="6" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="BbEbAbDbGbBbFixed" UIName="BbEbAbDbGbBb Fixed" Custom="true">
+    <Tuning string0="6" string1="6" string2="6" string3="6" string4="7" string5="6" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="BDGCEAFixed" UIName="BDGCEA Fixed" Custom="true">
+    <Tuning string0="7" string1="5" string2="5" string3="5" string4="5" string5="5" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="BGbBEBEFixed" UIName="BGbBEBE Fixed" Custom="true">
+    <Tuning string0="7" string1="9" string2="9" string3="9" string4="0" string5="0" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="BEADGbCFixed" UIName="BEADGbC Fixed" Custom="true">
+    <Tuning string0="7" string1="7" string2="7" string3="7" string4="7" string5="8" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="BEADGBFixed" UIName="BEADGB Fixed" Custom="true">
+    <Tuning string0="7" string1="7" string2="7" string3="7" string4="8" string5="7" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="ADGCFAFixed" UIName="ADGCFA Fixed" Custom="true">
+    <Tuning string0="5" string1="5" string2="5" string3="5" string4="6" string5="5" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="AEADGBFixed" UIName="AEADGB Fixed" Custom="true">
+    <Tuning string0="5" string1="7" string2="7" string3="7" string4="8" string5="7" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="AEADBEFixed" UIName="AEADBE Fixed" Custom="true">
+    <Tuning string0="5" string1="7" string2="7" string3="7" string4="0" string5="0" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="GDropFFixed" UIName="G Drop F Fixed" Custom="true">
+    <Tuning string0="1" string1="3" string2="3" string3="3" string4="3" string5="3" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="ADropGFixed" UIName="A Drop G Fixed" Custom="true">
+    <Tuning string0="3" string1="5" string2="5" string3="5" string4="5" string5="5" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="AStandardFixed" UIName="A Standard Fixed" Custom="true">
+    <Tuning string0="5" string1="5" string2="5" string3="5" string4="5" string5="5" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="ADGCFBbFixed" UIName="ADGCFBb Fixed" Custom="true">
+    <Tuning string0="5" string1="5" string2="5" string3="5" string4="6" string5="6" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="AbEbAbDbGbBFixed" UIName="AbEbAbDbGbB Fixed" Custom="true">
+    <Tuning string0="4" string1="6" string2="6" string3="6" string4="7" string5="7" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="BbDropAbFixed" UIName="Bb Drop Ab Fixed" Custom="true">
+    <Tuning string0="4" string1="6" string2="6" string3="6" string4="6" string5="6" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="BEADGEFixed" UIName="BEADGE Fixed" Custom="true">
+    <Tuning string0="7" string1="7" string2="7" string3="7" string4="8" string5="0" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="FDADGbEFixed" UIName="FDADGbE Fixed" Custom="true">
+    <Tuning string0="1" string1="5" string2="7" string3="7" string4="7" string5="0" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="BbFBbEbGEFixed" UIName="BbFBbEbGE Fixed" Custom="true">
+    <Tuning string0="6" string1="8" string2="8" string3="8" string4="8" string5="0" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="BEADGCFixed" UIName="BEADGC Fixed" Custom="true">
+    <Tuning string0="7" string1="7" string2="7" string3="7" string4="8" string5="8" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="AbGbBEAbDbFixed" UIName="AbGbBEAbDb Fixed" Custom="true">
+    <Tuning string0="4" string1="9" string2="9" string3="9" string4="9" string5="9" />
+  </TuningDefinition>
+  <TuningDefinition Version="RS2014" Name="BbEbAbDbGbEFixed" UIName="BbEbAbDbGbE Fixed" Custom="true">
+    <Tuning string0="6" string1="6" string2="6" string3="6" string4="7" string5="0" />
+  </TuningDefinition>
+</ArrayOfTuningDefinition>
